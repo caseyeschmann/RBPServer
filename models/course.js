@@ -6,7 +6,7 @@ const db = require('../db')
             type: DataTypes.STRING,
             allowNull: false
         },
-        courseNumber: {
+        courseNumber: { 
             type: DataTypes.INTEGER,
             allowNull: false
         },

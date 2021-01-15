@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Student = require('../models')
+const {Student} = require('../models')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs')
 
@@ -9,7 +9,7 @@ router.post('/register', function (req,res) {
     
     Student.create({
         // using express req.body middleware to post our requests
-        isAdmin: req.body.student.isAdmin,
+        // isAdmin: req.body.student.isAdmin,
         firstName: req.body.student.firstName,
         lastName: req.body.student.lastName,
         email: req.body.student.email,

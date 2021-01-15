@@ -17,7 +17,7 @@ router.get('/all', (req,res) => {
 
 // Create
 
-router.post('/create', validateEmployee, function (req,res) {
+router.post('/create', function (req,res) {
     
     Course.create({
         // using express req.body middleware to post our requests
@@ -44,7 +44,7 @@ router.post('/create', validateEmployee, function (req,res) {
 
 // Update
 
-    router.put('/edit/:id', validateEmployee, (req,res) => {
+    router.put('/edit/:id', (req,res) => {
         const query = req.params.id;
         Course.update(req.body, {where: {id: query}})
             .then((courseUpdated) => {
@@ -62,7 +62,7 @@ router.post('/create', validateEmployee, function (req,res) {
 
 // Delete
 
-    router.delete('/delete/:id', validateEmployee, (req,res) => {
+    router.delete('/delete/:id', (req,res) => {
         Course.destroy({
             where: {id: req.params.id}
         })

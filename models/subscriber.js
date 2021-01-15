@@ -2,7 +2,7 @@ const {DataTypes} = require('sequelize');
 const db = require('../db')
 
 
-    const Student = db.define('student', {
+    const Subscriber = db.define('subscriber', {
 
         firstName: {
             type: DataTypes.STRING,
@@ -14,21 +14,16 @@ const db = require('../db')
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
         },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        licenseState: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        licenseNumber: {
+        phoneNumber: {
             type: DataTypes.INTEGER,
-            allowNull: false
+        },
+        currentEmployer: {
+            type: DataTypes.STRING,
+        },
+        enterMessage: {
+            type: DataTypes.STRING,
         }
     })
 
-    module.exports = Student;
+    module.exports = Subscriber;

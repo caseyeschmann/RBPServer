@@ -26,11 +26,15 @@ app.use('/students', controllers.studentcontroller)
 // app.use(require('./middleware/validateEmployee'));
 app.use('/employees', controllers.employeecontroller)
 
+
+app.use('/subscribers', controllers.subscribercontroller)
+
 // app.use('/orders', controllers.ordercontroller)
 
 
+
 db.authenticate()
-.then(() => db.sync()) // {force:true}
+.then(() => db.sync({force:true})) // {force:true}
 .then(() => {
     app.listen(process.env.PORT, () => console.log(`[Server:] App is listening on Port ${process.env.PORT}`));
 })
